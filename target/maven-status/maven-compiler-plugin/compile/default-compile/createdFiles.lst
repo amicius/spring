@@ -1,0 +1,10 @@
+fr\dta\configuration\JpaConfiguration.class
+fr\dta\controller\HelloWorldController.class
+fr\dta\repository\AbstractJpaRepository.class
+fr\dta\App.class
+fr\dta\configuration\WebAppInitializer.class
+fr\dta\configuration\WebAppMvcConfigurer.class
+fr\dta\service\UserService.class
+fr\dta\persistence\IoEntity.class
+fr\dta\model\User.class
+fr\dta\repository\UserRepository.class
