@@ -14,8 +14,8 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
     
-    public void save(User u) {
-        userRepository.save( u );
+    public User save(User u) {
+        return userRepository.save( u );
     }
     
     public User findOne(Long id) {

@@ -8,6 +8,9 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.hibernate.validator.constraints.NotBlank;
+
+import dr.dta.validator.Password;
 import fr.dta.persistence.IoEntity;
 
 @Entity
@@ -21,10 +24,14 @@ public class User implements IoEntity {
     @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "user_seq" )
     private Long              id;
     @Column
+    @NotBlank
     private String            login;
     @Column
+    @NotBlank
+    @Password
     private String            password;
     @Column
+    @NotBlank
     private String            name;
 
     @Override

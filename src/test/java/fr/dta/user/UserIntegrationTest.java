@@ -23,8 +23,7 @@ public class UserIntegrationTest extends IntegrationTest {
 
     @Test
     public void testCreate() throws Exception {
-        User u = new User( "test" );
-        u.setLogin( "test" );
+        User u = new User( "aria", "azerty8uiop", "aria" );
         this.mockMvc
                 .perform( post( "/api/users" ).contentType( MediaType.APPLICATION_JSON ).characterEncoding( "UTF-8" )
                         .content( jsonHelper.serialize( u ) ) )
@@ -63,6 +62,17 @@ public class UserIntegrationTest extends IntegrationTest {
     public void testGetAllUsers() throws Exception {
         this.mockMvc.perform( get( "/api/users" ) ).andDo( MockMvcResultHandlers.print() )
                 .andExpect( jsonPath( "$", hasSize( 2 ) ) ).andExpect( status().isOk() );
+    }
+
+    @Test
+    public void testInvalidPassword() throws Exception {
+        User u = new User( "aria", "azertyuiop", "aria" );
+        this.mockMvc
+                .perform( post( "/api/users" ).contentType( MediaType.APPLICATION_JSON ).characterEncoding( "UTF-8" )
+                        .content( jsonHelper.serialize( u ) ) )
+                .andExpect( status().isBadRequest() );
+        this.mockMvc.perform( get( "/api/users" ) ).andDo( MockMvcResultHandlers.print() )
+                .andExpect( jsonPath( "$", hasSize( 2 ) ) ).andExpect( status().isOk()  );
     }
 
 }
