@@ -29,6 +29,7 @@ public class UserController {
     }
     
     @RequestMapping(method = RequestMethod.GET )
+    @ResponseStatus( HttpStatus.OK )
     @ResponseBody
     public List<User> findAll() {
         return userService.findAll();
@@ -40,7 +41,7 @@ public class UserController {
         userService.save( resource );
     }
     
-    @RequestMapping( method = RequestMethod.POST )
+    @RequestMapping( method = RequestMethod.PUT )
     @ResponseStatus( HttpStatus.OK )
     public void update( @RequestBody User resource ) {
         userService.save( resource );
