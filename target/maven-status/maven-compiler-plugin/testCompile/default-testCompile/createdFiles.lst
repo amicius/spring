@@ -1,1 +1,4 @@
-fr\dta\test\UserServiceTest.class
+fr\dta\IntegrationTest.class
+fr\dta\helper\JsonHelper.class
+fr\dta\user\UserIntegrationTest.class
+fr\dta\user\UserServiceTest.class

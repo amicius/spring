@@ -6,5 +6,6 @@ fr\dta\configuration\WebAppInitializer.class
 fr\dta\configuration\WebAppMvcConfigurer.class
 fr\dta\service\UserService.class
 fr\dta\persistence\IoEntity.class
+fr\dta\controller\UserController.class
 fr\dta\model\User.class
 fr\dta\repository\UserRepository.class

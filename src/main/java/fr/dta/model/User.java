@@ -28,7 +28,7 @@ public class User implements IoEntity {
     @NotNull
     private String            password;
     @Column
-    private String            nom;
+    private String            name;
 
     @Override
     public Long getId() {
@@ -57,23 +57,28 @@ public class User implements IoEntity {
         this.password = password;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom( String nom ) {
-        this.nom = nom;
+    public void setName( String name ) {
+        this.name = name;
     }
 
     public User() {
         super();
     }
     
-    public User( String login, String password, String nom ) {
+    public User(String name) {
+        this.name = name;
+    }
+
+    
+    public User( String login, String password, String name ) {
         super();
         this.login = login;
         this.password = password;
-        this.nom = nom;
+        this.name = name;
     }
 
     @Override
