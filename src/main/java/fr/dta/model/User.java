@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 import fr.dta.persistence.IoEntity;
 
@@ -22,10 +21,8 @@ public class User implements IoEntity {
     @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "user_seq" )
     private Long              id;
     @Column
-    @NotNull
     private String            login;
     @Column
-    @NotNull
     private String            password;
     @Column
     private String            name;

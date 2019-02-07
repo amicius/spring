@@ -23,13 +23,13 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping( value = "{id}", method = RequestMethod.GET )
+    //@ResponseStatus( HttpStatus.NOT_FOUND)
     @ResponseBody
     public User findById( @PathVariable Long id ) {
         return userService.findOne( id );
     }
     
     @RequestMapping(method = RequestMethod.GET )
-    @ResponseStatus( HttpStatus.OK )
     @ResponseBody
     public List<User> findAll() {
         return userService.findAll();
@@ -42,13 +42,11 @@ public class UserController {
     }
     
     @RequestMapping( method = RequestMethod.PUT )
-    @ResponseStatus( HttpStatus.OK )
     public void update( @RequestBody User resource ) {
         userService.save( resource );
     }
     
     @RequestMapping(method = RequestMethod.DELETE)
-    @ResponseStatus( HttpStatus.OK)
     public void delete(@RequestBody User resource) {
         userService.delete( resource );
     }
