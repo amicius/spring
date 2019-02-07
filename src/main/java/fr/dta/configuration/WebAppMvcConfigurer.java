@@ -33,6 +33,8 @@ public class WebAppMvcConfigurer extends WebMvcConfigurerAdapter {
         return viewResolver;
     }
 
+    
+
     @Bean
     public ResourceBundleMessageSource messageSource() {
         ResourceBundleMessageSource source = new ResourceBundleMessageSource();
