@@ -4,6 +4,7 @@
 <%@ page session="false"%>
 
 <html>
+
 <body>
 	<h2>Update ok</h2>
 	${user.name} has been updated successully
